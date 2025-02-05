@@ -1,7 +1,12 @@
-function Card(){
+type CardProps = {
+    classCard?:string;
+    classImg?:string;
+}
+
+function Card({classCard = 'cities__place-card',classImg = 'cities'}:CardProps){
   return (
-    <article className="cities__place-card place-card">
-      <div className="cities__image-wrapper place-card__image-wrapper">
+    <article className={`${classCard} place-card`}>
+      <div className={`${classImg}__image-wrapper place-card__image-wrapper`}>
         <a href="#">
           <img className="place-card__image" src="img/apartment-02.jpg" width="260" height="200" alt="Place image"/>
         </a>
