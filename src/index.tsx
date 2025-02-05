@@ -6,8 +6,12 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 
+const Setting = {
+  countOffers:3
+};
+
 root.render(
   <React.StrictMode>
-    <App />
+    <App countOffers={Setting.countOffers}/>
   </React.StrictMode>,
 );
