@@ -12,14 +12,8 @@ function App(props:AppScreenProps): JSX.Element {
     <BrowserRouter>
       <Routes>
         <Route path='/'>
-          <Route index element={<MainPage countOffers={props.countOffers}/>}/>
-          <Route path='main'>
-            <Route path='paris'/>
-            <Route path='cologne'/>
-            <Route path='brussels'/>
-            <Route path='amsterdam'/>
-            <Route path='hamburg'/>
-            <Route path='dusseldorf'/>
+          <Route path='/' element={<MainPage countOffers={props.countOffers} />}>
+            <Route path='main/:city' element={<MainPage countOffers={props.countOffers} />}/>
           </Route>
           <Route path='fovorit' element={<FavoritPage/>}></Route>
           <Route path='property' element={<PropertyPage/>}></Route>
