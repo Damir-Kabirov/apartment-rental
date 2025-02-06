@@ -1,35 +1,24 @@
-import { Fragment } from 'react';
 import Header from '../../components/Header/Header';
 import Review from '../../components/Review/Review';
 import FormReview from '../../components/FormReview/FormReview';
 import Card from '../../components/Card/Card';
+import { propertyImage } from '../../const';
 
 function PropertyPage (){
   return (
-    <Fragment>
+
+    <div className="page">
       <Header/>
       <main className="page__main page__main--property">
         <section className="property">
           <div className="property__gallery-container container">
             <div className="property__gallery">
-              <div className="property__image-wrapper">
-                <img className="property__image" src="img/room.jpg" alt="Photo studio"/>
-              </div>
-              <div className="property__image-wrapper">
-                <img className="property__image" src="img/apartment-01.jpg" alt="Photo studio"/>
-              </div>
-              <div className="property__image-wrapper">
-                <img className="property__image" src="img/apartment-02.jpg" alt="Photo studio"/>
-              </div>
-              <div className="property__image-wrapper">
-                <img className="property__image" src="img/apartment-03.jpg" alt="Photo studio"/>
-              </div>
-              <div className="property__image-wrapper">
-                <img className="property__image" src="img/studio-01.jpg" alt="Photo studio"/>
-              </div>
-              <div className="property__image-wrapper">
-                <img className="property__image" src="img/apartment-01.jpg" alt="Photo studio"/>
-              </div>
+              {propertyImage.map((img)=>
+                (
+                  <div key={img.id} className="property__image-wrapper">
+                    <img className="property__image" src={img.url} alt="Photo studio"/>
+                  </div>)
+              )}
             </div>
           </div>
           <div className="property__container container">
@@ -178,7 +167,8 @@ function PropertyPage (){
           </section>
         </div>
       </main>
-    </Fragment>
+    </div>
+
   );
 }
 
